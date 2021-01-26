@@ -1,0 +1,49 @@
+version: "2.0"
+
+entities:
+  - author
+  - book
+  - genre
+  - date
+
+intents:
+  - recommend
+  - book_mention
+  - author_mention
+  - genre_mention
+  - date_mention
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+responses:
+  utter_recommend:
+  - text: "If you are looking for recommendations I can surely help you. Can you tell me about any books, authors or genre that you enjoy?"
+
+  utter_greet:
+  - text: "Hello, I am a librarian bot! I know a lot about literature, so just ask me about any book or author!"
+  - text: "Greeting, it is I, a librarian bot! I can help you in your search for information on books or authors."
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "Who among us can truly say that they understand their own nature? Well not many but I can, I am a chatbot powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
