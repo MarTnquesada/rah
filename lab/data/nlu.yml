@@ -2,24 +2,61 @@ version: "2.0"
 
 nlu:
 
+- intent: find_book_info
+  examples: |
+    - I am looking for information on [H.G. Wells](author)'s [The War Of The Worlds](book)
+    - I am looking for the last book in the [Game Of Thrones](book) trilogy
+    - Who is the author of [La Celestina](book)?
+
+- intent: find_author_info
+  examples: |
+    - Do you have the latest book by [Vargas Llosa](author)?
+    - I want some books by [Fernando Marias](author)
+
 - intent: recommend
   examples: |
     - Do you have any recommendations?
-    - I dont know what to say
-    - I dont know what to read
     - Recommend me something
-    - Tell me something new
-    - I want something new
     - Surprise me
-    - Which book should I read
+    - Can you recommend me something?
+
+- intent: preference
+  examples: |
+    - I like [The Road](book), by [Cormac McArthy](author)
+    - My favourite book is [Blook Meridian](book), written by [Cormac McArthy], can you find any similar books?
+    - I like [mistery](genre) novels and [thrillers](genre), like the ones from [Agatha Christie](author)
+    - I like anything [Cixin Liu](author)
+    - Im looking to something similar to [The Three Body Problem](book)
+    - I'd like to read some [fantasy](genre) books
+
+- intent: uncertain_preference
+  examples: |
+   - I really dont know
+   - I dont know because I dont usually read
+   - I dont know any, please tell me one that you like
+   - Im not sure, what do you like?
+   - What do you like?
+   - Not sure, I want something completely new
 
 - intent: book_mention
   examples: |
     - [The Never Ending Story](book)
+    - [Tokyo Blues](book)
+    - [The Dark Forest](book)
+    - [Paradise Lost](book)
+    - [Wilt](book)
+    - [Rayuela](book)
 
 - intent: author_mention
   examples: |
     - [Borges](author)
+    - [Jorge Luis Borges](author)
+    - [Michael Ende](author)
+    - [Albert Camus](author)
+    - [Dante](Author)
+    - [Roberto Bolano](author)
+    - [Roberto Bolaño](author)
+    - [William Gibson](author)
 
 - intent: genre_mention
   examples: |
@@ -28,11 +65,13 @@ nlu:
     - [fantasy](genre)
     - [historical](genre)
     - [biography](genre)
+    - [scientific](genre)
+    - [cooking](genre)
 
 - intent: date_mention
   examples: |
     - [1st]{"entity": "date", "role": "day"} of [january]{"entity": "date", "role": "month"} of [1995]{"entity": "date", "role": "year"}
-
+    - [2010]{"entity": "date", "role": "year"}
 
 - intent: greet
   examples: |

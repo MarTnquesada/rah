@@ -2,12 +2,49 @@ version: "2.0"
 
 stories:
 
+- story: find_book_info
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: find_book_info
+  - action: utter_retrieve_info
+
+- story: find_author_info
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: find_author_info
+  - action: utter_retrieve_info
+
 - story: recommendation
   steps:
   - intent: greet
   - action: utter_greet
   - intent: recommend
   - action: utter_recommend
+  - intent: preference
+  - action: utter_retrieve_info
+
+- story: uncertain_recommendation
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend
+  - action: utter_recommend
+  - intent: uncertain_preference
+  - action: utter_bot_preference
+
+- story: helpful
+  steps:
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: not_helpful
+  steps:
+  - action: utter_did_that_help
+  - intent: deny
+  - action: apologise
 
 - story: happy path
   steps:

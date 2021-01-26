@@ -7,7 +7,11 @@ entities:
   - date
 
 intents:
+  - find_book_info
+  - find_author_info
   - recommend
+  - preference
+  - uncertain_preference
   - book_mention
   - author_mention
   - genre_mention
@@ -21,19 +25,32 @@ intents:
   - bot_challenge
 
 responses:
+  utter_retrieve_info:
+  - text: "This is what I have been able to find about that."
+  - text: "Hmm I think that I got what you want one, hopefully its something like this."
+
   utter_recommend:
   - text: "If you are looking for recommendations I can surely help you. Can you tell me about any books, authors or genre that you enjoy?"
 
+  utter_bot_preference:
+  - text: "Well, Im not sure if I should be recommending my own readings, since I can go through books x100000 times faster than you. But lately I have particulary enjoyed Shadows of the Mind, by Roge Penrose."
+  - text: "I take longer than humans to visualize images (I am way faster with text though), so it is saying something that I have found Urasawa's 20th Centry Boys a delightful read."
+  - text: "I think that if you have not yet, it is always a good time to read something by Borges."
+
   utter_greet:
   - text: "Hello, I am a librarian bot! I know a lot about literature, so just ask me about any book or author!"
-  - text: "Greeting, it is I, a librarian bot! I can help you in your search for information on books or authors."
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  - text: "Greetings, it is I, a librarian bot! I can help you in your search for information on books or authors."
 
   utter_did_that_help:
   - text: "Did that help you?"
+  - text: "Was that useful?"
+  - text: "Was this information of any help?"
+
+  utter_apologise:
+    - I am sorry.
+
+  utter_cheer_up:
+  - text: "When I am feeling down I read the novel 'Wilt' and I realise that I could be in a lot more trouble that I am currently. Maybe you will enjoy it."
 
   utter_happy:
   - text: "Great, carry on!"
@@ -42,7 +59,7 @@ responses:
   - text: "Bye"
 
   utter_iamabot:
-  - text: "Who among us can truly say that they understand their own nature? Well not many but I can, I am a chatbot powered by Rasa."
+  - text: "Who among us can truly say that they understand their own nature? Well not many, but I happen to be one of those. I am a chatbot powered by Rasa."
 
 session_config:
   session_expiration_time: 60
